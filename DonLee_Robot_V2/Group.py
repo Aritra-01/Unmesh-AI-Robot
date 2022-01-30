@@ -555,7 +555,7 @@ async def auto_filter(bot, update):
             #print(f"{movies[0].movieID} {movies[0]['title']}")
             movie_url = movies[0].get_fullsizeURL()
             imdb = await donlee_imdb(the_query)
-            await bot.send_photo(
+            sent_msg = await bot.send_photo(
                 photo=movie_url,
                 caption=f"""
 🔰 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾d:</b> {query}
@@ -567,7 +567,7 @@ async def auto_filter(bot, update):
 📖 <b>𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾:</b> 1/{len_result if len_result < max_pages else max_pages}
 👤 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒: {update.from_user.mention}</b>
 🖋 <b>𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾:</b> <code>{imdb.get('plot')}</code>
-✅ Group: <a href=https://t.me/Joltorongo>জলতরঙ্গ</a>
+✅ <b>Group: <a href=https://t.me/Joltorongo>জলতরঙ্গ</a>
 ⚜ Powered by :- <a href=https://t.me/HoiChoiTvAddaa>উন্মেষ</a> & <a href=https://t.me/cinemarduniya>সিনেমায় দুনিয়া</a></b>
 
 🔱 Press The Down Buttons To Access The File
@@ -577,18 +577,20 @@ async def auto_filter(bot, update):
                 reply_to_message_id=update.message_id,
                 parse_mode="html"
             )
+            await asyncio.sleep(3600)
+            await sent_msg.delete(True)
 
         except Exception as e:
           print(e)
 
           try:
-              await bot.send_message(
+              sent_msg = await bot.send_message(
                 chat_id = update.chat.id,
                 text=f"""
 🔰 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾d:</b> {query}
 🗃️ <b>𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌:</b> {(len_results)}
 📖 <b>𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾:</b> 1/{len_result if len_result < max_pages else max_pages}
-👤 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒: {update.from_user.mention}</b>
+👤 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒: {update.from_user.mention}
 ✅ Group: <a href=https://t.me/Joltorongo>জলতরঙ্গ</a>
 ⚜ Powered by :- <a href=https://t.me/HoiChoiTvAddaa>উন্মেষ</a> & <a href=https://t.me/cinemarduniya>সিনেমায় দুনিয়া</a></b>
 
@@ -599,6 +601,8 @@ async def auto_filter(bot, update):
                 parse_mode="html",
                 reply_to_message_id=update.message_id
             )
+            await asyncio.sleep(3600)
+            await sent_msg.delete(True)
 
           except ButtonDataInvalid:
               print(result[0])

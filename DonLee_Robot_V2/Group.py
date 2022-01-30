@@ -530,6 +530,11 @@ async def auto_filter(bot, update):
             ibuttons = None # Free Up Memory...
             achatId = None
 
+        result[0].append(
+            [InlineKeyboardButton("🌊জলতরঙ্গ🌊", url="https://t.me/Joltorongo")],
+            [InlineKeyboardButton("🔱উন্মেষ🔱", url="https://t.me/HoiChoiTvAddaa"),
+             InlineKeyboardButton("🔱সিনেমার দুনিয়া🔱", url="https://t.me/cinemarduniya")]
+        )
         reply_markup = InlineKeyboardMarkup(result[0])
 
         year = 2021
@@ -553,16 +558,20 @@ async def auto_filter(bot, update):
             await bot.send_photo(
                 photo=movie_url,
                 caption=f"""
-↪️ 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖬𝗈𝗏𝗂𝖾: {query}
-🎞️ 𝖳𝗂𝗍𝗅𝖾: <a href={imdb['url']}>{imdb.get('title')}
-🎭 𝖦𝖾𝗇𝗋𝖾𝗌: {imdb.get('genres')}
-📆 𝖸𝖾𝖺𝗋: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>
-🌟 𝖱𝖺𝗍𝗂𝗇𝗀: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10
-🗃️ 𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌 : {(len_results)}
-📑 𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾 : 1/{len_result if len_result < max_pages else max_pages}
-👤 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒 : {update.from_user.mention}
-🖋 𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾: <code>{imdb.get('plot')}</code>
-☑️ 𝖢𝗁𝖺𝗍 : {update.chat.title}""",
+🔰 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾d:</b> {query}
+🎞️ <b>𝖳𝗂𝗍𝗅𝖾:</b> <a href={imdb['url']}>{imdb.get('title')}
+🎭 <b>𝖦𝖾𝗇𝗋𝖾𝗌:</b> {imdb.get('genres')}
+📆 <b>𝖸𝖾𝖺𝗋:</b> <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>
+🌟 <b>𝖱𝖺𝗍𝗂𝗇𝗀:</b> <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10
+🗃️ <b>𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌:</b> {(len_results)}
+📖 <b>𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾:</b> 1/{len_result if len_result < max_pages else max_pages}
+👤 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒: {update.from_user.mention}</b>
+🖋 <b>𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾:</b> <code>{imdb.get('plot')}</code>
+✅ Group: <a href=https://t.me/Joltorongo>জলতরঙ্গ</a>
+⚜ Powered by :- <a href=https://t.me/HoiChoiTvAddaa>উন্মেষ</a> & <a href=https://t.me/cinemarduniya>সিনেমায় দুনিয়া</a></b>
+
+🔱 Press The Down Buttons To Access The File
+🔱 This Post Will Be Deleted After 1 hour""",
                 reply_markup=reply_markup,
                 chat_id=update.chat.id,
                 reply_to_message_id=update.message_id,
@@ -576,11 +585,15 @@ async def auto_filter(bot, update):
               await bot.send_message(
                 chat_id = update.chat.id,
                 text=f"""
-↪️ 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖬𝗈𝗏𝗂𝖾: {query}
-🗃️ 𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌 : {(len_results)}
-📑 𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾 : 1/{len_result if len_result < max_pages else max_pages}
-👤 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒 : {update.from_user.mention}
-☑️ 𝖢𝗁𝖺𝗍 : {update.chat.title}
+🔰 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾d:</b> {query}
+🗃️ <b>𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌:</b> {(len_results)}
+📖 <b>𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾:</b> 1/{len_result if len_result < max_pages else max_pages}
+👤 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒: {update.from_user.mention}</b>
+✅ Group: <a href=https://t.me/Joltorongo>জলতরঙ্গ</a>
+⚜ Powered by :- <a href=https://t.me/HoiChoiTvAddaa>উন্মেষ</a> & <a href=https://t.me/cinemarduniya>সিনেমায় দুনিয়া</a></b>
+
+🔱 Press The Down Buttons To Access The File
+🔱 This Post Will Be Deleted After 1 hour
 """,
                 reply_markup=reply_markup,
                 parse_mode="html",

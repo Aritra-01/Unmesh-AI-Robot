@@ -128,27 +128,42 @@ async def cb_navg(bot, update: CallbackQuery):
             temp_results.insert(0, x)
         ibuttons = None
         achatId = None
-    
+
+    temp_results.append(
+        [InlineKeyboardButton("🌊জলতরঙ্গ🌊", url="https://t.me/Joltorongo")],
+        [InlineKeyboardButton("🔱উন্মেষ🔱", url="https://t.me/HoiChoiTvAddaa"),
+         InlineKeyboardButton("🔱সিনেমার দুনিয়া🔱", url="https://t.me/cinemarduniya")]
+    )
     reply_markup = InlineKeyboardMarkup(temp_results)
     text=f"""
-↪️ 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖬𝗈𝗏𝗂𝖾: {query}
-🗃️ 𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌 : {leng}
-📑 𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾 : 1/{index_val + 1}/{len(results) if len(results) < max_pages else max_pages}
-👤 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒 : {update.from_user.mention}"""
+🔰 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾d:</b> {query}
+🗃️ <b>𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌:</b> {leng}
+📖 <b>𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾:</b> 1/{index_val + 1}/{len(results) if len(results) < max_pages else max_pages}
+👤 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒: {update.from_user.mention}
+✅ Group: <a href=https://t.me/Joltorongo>জলতরঙ্গ</a>
+⚜ Powered by :- <a href=https://t.me/HoiChoiTvAddaa>উন্মেষ</a> & <a href=https://t.me/cinemarduniya>সিনেমায় দুনিয়া</a></b>
+
+🔱 Press The Down Buttons To Access The File
+🔱 This Post Will Be Deleted After 1 hour"""
      
     try:
         imdb = await donlee_imdb(query)
         await update.message.edit_caption(
                 caption=f"""
-↪️ 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖬𝗈𝗏𝗂𝖾: {query}
-🎞️ 𝖳𝗂𝗍𝗅𝖾: <a href={imdb['url']}>{imdb.get('title')}
-🎭 𝖦𝖾𝗇𝗋𝖾𝗌: {imdb.get('genres')}
-📆 𝖸𝖾𝖺𝗋: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>
-🌟 𝖱𝖺𝗍𝗂𝗇𝗀: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10
-🗃️ 𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌 : {leng}
-📑 𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾 : 1/{index_val + 1}/{len(results) if len(results) < max_pages else max_pages}
-👤 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒 : {update.from_user.mention}
-🖋 𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾: <code>{imdb.get('plot')}</code>""",
+🔰 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽:</b> {query}
+🎞️ <b>𝖳𝗂𝗍𝗅𝖾:</b> <a href={imdb['url']}>{imdb.get('title')}</a>
+🎭 <b>𝖦𝖾𝗇𝗋𝖾𝗌:</b> {imdb.get('genres')}
+📆 <b>𝖸𝖾𝖺𝗋:</b> <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>
+🌟 <b>𝖱𝖺𝗍𝗂𝗇𝗀:</b> <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10
+🗃️ <b>𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌:</b> {leng}
+📖 <b>𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾:</b> 1/{index_val + 1}/{len(results) if len(results) < max_pages else max_pages}
+👤 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒: {update.from_user.mention}</b>
+🖋 <b>𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾:</b> <code>{imdb.get('plot')}</code>
+✅ <b>Group: <a href=https://t.me/Joltorongo>জলতরঙ্গ</a>
+⚜ Powered by :- <a href=https://t.me/HoiChoiTvAddaa>উন্মেষ</a> & <a href=https://t.me/cinemarduniya>সিনেমায় দুনিয়া</a></b>
+
+🔱 Press The Down Buttons To Access The File
+🔱 This Post Will Be Deleted After 1 hour""",
                 reply_markup=reply_markup,
                 parse_mode="html"
         )
@@ -161,21 +176,21 @@ async def cb_navg(bot, update: CallbackQuery):
                 parse_mode="html"
             )
         
-        except FloodWait as f: # Flood Wait Caused By Spamming Next/Back Buttons
+        except FloodWait as f:  # Flood Wait Caused By Spamming Next/Back Buttons
            await asyncio.sleep(f.x)
            try:
               imdb = await donlee_imdb(query)
               await update.message.edit_caption(
                 caption=f"""
-↪️ 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖬𝗈𝗏𝗂𝖾: {query}
-🎞️ 𝖳𝗂𝗍𝗅𝖾: <a href={imdb['url']}>{imdb.get('title')}
-🎭 𝖦𝖾𝗇𝗋𝖾𝗌: {imdb.get('genres')}
-📆 𝖸𝖾𝖺𝗋: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>
-🌟 𝖱𝖺𝗍𝗂𝗇𝗀: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10
-🗃️ 𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌 : {leng}
-📑 𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾 : 1/{index_val + 1}/{len(results) if len(results) < max_pages else max_pages}
-👤 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒 : {update.from_user.mention}
-🖋 𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾: <code>{imdb.get('plot')}</code>""",
+🔰 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖬𝗈𝗏𝗂𝖾:</b> {query}
+🎞️ <b>𝖳𝗂𝗍𝗅𝖾:</b> <a href={imdb['url']}>{imdb.get('title')}
+🎭 <b>𝖦𝖾𝗇𝗋𝖾𝗌:</b> {imdb.get('genres')}
+📆 <b>𝖸𝖾𝖺𝗋:</b> <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>
+🌟 <b>𝖱𝖺𝗍𝗂𝗇𝗀:</b> <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10
+🗃️ <b>𝖳𝗈𝗍𝖺𝗅 𝖥𝗂𝗅𝖾𝗌:</b> {leng}
+📖 <b>𝖳𝗈𝗍𝖺𝗅 𝖯𝖺𝗀𝖾:</b> 1/{index_val + 1}/{len(results) if len(results) < max_pages else max_pages}
+👤 <b>𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽 𝖡𝗒: {update.from_user.mention}</b>
+🖋 <b>𝖲𝗍𝗈𝗋𝗒𝗅𝗂𝗇𝖾:</b> <code>{imdb.get('plot')}</code>""",
                 reply_markup=reply_markup,
                 parse_mode="html"
               )
@@ -185,6 +200,8 @@ async def cb_navg(bot, update: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode="html"
                )
+
+
 @DonLee_Robot_V2.on_callback_query(filters.regex(r"settings"), group=2)
 async def cb_settings(bot, update: CallbackQuery):
 
@@ -217,7 +234,6 @@ async def cb_settings(bot, update: CallbackQuery):
     reply_markup = InlineKeyboardMarkup(buttons)
 
     await update.message.edit_text(text, reply_markup=reply_markup, parse_mode="html")
-
 
 
 @DonLee_Robot_V2.on_callback_query(filters.regex(r"warn\((.+)\)"), group=2)
@@ -262,7 +278,6 @@ async def cb_warn(bot, update: CallbackQuery):
     reply_markup = InlineKeyboardMarkup(buttons)
     
     await update.message.edit_text(text, reply_markup=reply_markup, parse_mode="html")
-
 
 
 @DonLee_Robot_V2.on_callback_query(filters.regex(r"channel_list\((.+)\)"), group=2)
@@ -352,7 +367,6 @@ async def cb_channel_list(bot, update: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode="html"
         )
-
 
 
 @DonLee_Robot_V2.on_callback_query(filters.regex(r"info\((.+)\)"), group=2)
@@ -450,7 +464,6 @@ async def cb_info(bot, update: CallbackQuery):
     await update.message.edit_text(
             text, reply_markup=reply_markup, parse_mode="html"
         )
-
 
 
 @DonLee_Robot_V2.on_callback_query(filters.regex(r"^connect\((.+)\)"), group=2)

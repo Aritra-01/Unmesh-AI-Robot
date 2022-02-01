@@ -58,9 +58,10 @@ class Text(object):
 """
     SPELLING_TEXT = """
 𝖧𝖾𝗅𝗅𝗈 {},
-𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 {} ? 𝖯𝗅𝖾𝖺𝗌𝖾 𝖢𝗅𝗂𝖼𝗄 𝖸𝗈𝗎𝗋 𝖱𝖾𝗊𝗎𝖾𝗌𝗍 𝖬𝗈𝗏𝗂𝖾 𝖭𝖺𝗆𝖾
+I Couldn't 🔍 Find {} Requested by You
+Click [GOOGLE] [IMDB] On Any Button And Find The Correct Movie/Series Name And Enter It Here ⤵️
 
-{} മൂവി കിട്ടിയില്ല അല്ലെ ? നിങ്ങൾ ടൈപ്പ് ചെയ്ത സ്പ്ലിങ് നോക്കു..!!
+If You Do Not Receive The Movie/Series Even After Entering The Correct Name Then Request in @HoiChoi_Group or @Cinemarduniyaa in correct format (Movie/Series Name+Year+Resolution)
 """
     AUTO_FILTER_1_TEXH = """
 𝖧𝖾𝗅𝗉: <b><u>𝖠𝗎𝗍𝗈 𝖥𝗂𝗅𝗍𝖾𝗋

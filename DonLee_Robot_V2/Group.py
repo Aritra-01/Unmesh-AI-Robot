@@ -456,7 +456,7 @@ async def auto_filter(bot, update):
             chat_id = update.chat.id,
             text=Text.SPELLING_TEXT.format(update.from_user.mention, the_query, the_query),
             parse_mode="html",
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔍 Search Google 🔎", url="https://google.com/")]]),
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔍 Google", url="https://google.com/"), InlineKeyboardButton("IMDb 🔎", url="https://imdb.com")]]),
             reply_to_message_id=update.message_id
         )
         await asyncio.sleep(60) # in seconds

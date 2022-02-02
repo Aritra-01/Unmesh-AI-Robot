@@ -65,7 +65,7 @@ async def cb_handler(client, query):
 
     elif query.data == "about":
         button = [[
-          Import.Button("👨‍💻𝖣𝖾𝗉𝗅𝗈𝗒", url='https://www.youtube.com/watch?v=NrbMc93aCzA'),
+          Import.Button("👨‍💻𝖣EV", url='https://t.me/HoiChoitvAddaa'),
           Import.Button("𝖲𝗈𝗎𝗋𝖼𝖾📦", callback_data="source")
           ],[
           Import.Button("⚠️𝖧𝖾𝗅𝗉", callback_data="help"),
@@ -166,7 +166,7 @@ async def cb_handler(client, query):
 
     elif query.data == "source":
         button = [[
-          Import.Button("🖥️ 𝖵𝗂𝖽𝖾𝗈 🖥️", url="https://www.youtube.com/watch?v=NrbMc93aCzA"),
+          Import.Button("🖥️ CLICK HERE 🖥️", url="https://www.Google.com"),
           ],[
           Import.Button("🔙 𝖡𝖺𝖼𝗄", callback_data="about"),
           Import.Button("𝖢𝗋𝖾𝖽𝗂𝗍𝗌 💞", callback_data="credits")

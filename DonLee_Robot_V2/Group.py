@@ -553,7 +553,7 @@ async def auto_filter(bot, update):
             my_movie=the_query
             movies = ia.search_movie(my_movie)
             #print(f"{movies[0].movieID} {movies[0]['title']}")
-            movie_url = movies[0].get_fullsizeURL()
+            movie_url = "https://telegra.ph/file/1055528853f50cf5a3be2.jpg"  # movies[0].get_fullsizeURL()
             imdb = await donlee_imdb(the_query)
             sent_msg = await bot.send_photo(
                 photo=movie_url,
